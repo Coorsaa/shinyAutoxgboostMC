@@ -1,0 +1,50 @@
+Package: shinyAutoxgboostMC
+Title: A graphical user interface for autoxgboostMC
+Description:
+  shinyAutoxgboostMC serves as a graphical user-interface to demonstrate the functionalities of the multicrit automl R-package autoxgboostMC.
+Authors@R: c(
+  person("Stefan", "Coors", email = "stefan.coors@stat.uni-muenchen.de",
+    role = c("aut", "cre")),
+  person("Florian", "Pfisterer", email = "florian.pfisterer@stat.uni-muenchen.de",
+    role = "aut"),
+  person("Bernd", "Bischl", email = "bernd_bischl@gmx.net",
+    role = "ctb"))
+URL: https://github.com/coorsaa/shinyAutoxgboostMC
+BugReports: https://github.com/coorsaa/shinyAutoxgboostMCissues
+License: BSD_2_clause + file LICENSE
+Encoding: UTF-8
+Roxygen: list(wrap = FALSE)
+Depends:
+  R (>= 3.5)
+Imports:
+  mlr,
+  autoxgboostMC,
+  shiny,
+  shinydashboard,
+  shinyjs,
+  shinyBS,
+  DT,
+  plotly,
+  shinythemes,
+  tools,
+  httr,
+  stringi,
+  readr,
+  BBmisc,
+  ParamHelpers,
+  farff,
+  OpenML,
+  ggplot2,
+  parallelMap,
+  plyr,
+  rmarkdown,
+  GGally
+Suggests:
+  testthat,
+  roxygen2,
+  knitr,
+  R.utils
+LazyData: true
+Version: 1.0
+VignetteBuilder: knitr
+RoxygenNote: 6.1.1
