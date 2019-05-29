@@ -37,7 +37,11 @@
 }*/
 
 #model_overview {
-  color: #fff;
+  color: #FFF;
+}
+
+.pretty {
+  color: #FFF;
 }
 
 /*.col-sm-8{

@@ -23,6 +23,7 @@ Imports:
   shinydashboard,
   shinyjs,
   shinyBS,
+  shinyWidgets,
   DT,
   plotly,
   shinythemes,

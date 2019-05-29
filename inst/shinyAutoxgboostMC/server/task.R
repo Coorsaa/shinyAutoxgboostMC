@@ -55,6 +55,7 @@ observeEvent(input$create.task, {
   } else {
     data$data = getTaskData(task)
   }
+  rmarkdown::render(input = "status.Rmd")
   hide("loading-task", anim = TRUE, animType = "fade")
 })
 

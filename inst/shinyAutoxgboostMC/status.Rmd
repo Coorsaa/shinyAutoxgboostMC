@@ -1,0 +1,33 @@
+---
+output: html_document
+---
+
+## Status
+
+```{r, echo = FALSE}
+if (is.null(data$data)) {
+  data = "[ ] Choose Dataset"
+} else {
+  data = "[x] Choose Dataset"
+}
+
+if (is.null(task.object$task)) {
+  task = "[ ] Create Task"
+} else {
+  task = "[x] Create Task"
+}
+
+if (is.null(axgb.model$axgb)) {
+  model = "[ ] Train Model"
+} else {
+  model = "[x] Train Model"
+}
+
+```
+
+
+`r data`
+
+`r task`
+
+`r model`

@@ -2,6 +2,10 @@ tabpanel.train = fluidPage(theme = shinytheme("united"),
   sidebarLayout(
     sidebarPanel(
       div(align = "center",
+        h3("Status", style = "color: #FFF"),
+        htmlOutput("status.train"),
+        br(),
+        tags$hr(),
         uiOutput("autoxgboos.params.sel")
         # hr(),
         # uiOutput("model_overview")

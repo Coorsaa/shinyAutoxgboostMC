@@ -5,6 +5,7 @@ require(shinyBS)
 require(DT)
 require(plotly)
 require(shinythemes)
+require(shinyWidgets)
 
 source("./helpers/helpers_ui.R", local = TRUE)$value
 

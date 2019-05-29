@@ -47,6 +47,7 @@ observeEvent(input$axgb.run, {
     plot = FALSE
   )
   axgb.model$axgb = m
+  rmarkdown::render(input = "status.Rmd")
   hide("loading-training", anim = TRUE, animType = "fade")
   show("model.print", anim = TRUE, animType = "fade")
 })
