@@ -26,11 +26,13 @@ output$autoxgboos.params.sel = renderUI({
 axgb.model = reactiveValues(axgb = NULL)
 
 axgb = reactive({
-  if(is.null(axgb.model$axgb))
+  if(is.null(axgb.model$axgb)) {
     return(NULL)
-  else
+  } else {
     return(axgb.model$axgb)
+  }
 })
+
 
 observeEvent(input$axgb.run, {
   show("loading-training")
@@ -44,8 +46,9 @@ observeEvent(input$axgb.run, {
     iterations = input$iter.budget,
     plot = FALSE
   )
-  hide("loading-training", anim = TRUE, animType = "fade")
   axgb.model$axgb = m
+  hide("loading-training", anim = TRUE, animType = "fade")
+  show("model.print", anim = TRUE, animType = "fade")
 })
 
 output$model.print = renderPrint({

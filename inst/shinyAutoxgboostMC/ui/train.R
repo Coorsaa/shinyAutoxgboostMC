@@ -8,7 +8,7 @@ tabpanel.train = fluidPage(theme = shinytheme("united"),
       )
     ),
     mainPanel(
-      fluidRow(verbatimTextOutput("model.print"))
+      fluidRow(hidden(verbatimTextOutput("model.print")))
     )
   )
 )
