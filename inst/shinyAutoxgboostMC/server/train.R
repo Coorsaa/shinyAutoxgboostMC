@@ -26,8 +26,10 @@ output$autoxgboos.params.sel = renderUI({
 axgb.model = reactiveValues(axgb = NULL)
 
 axgb = reactive({
-  reqAndAssign(axgb.model$axgb, "axgb")
-  axgb
+  if(is.null(axgb.model$axgb))
+    return(NULL)
+  else
+    return(axgb.model$axgb)
 })
 
 observeEvent(input$axgb.run, {
@@ -39,17 +41,15 @@ observeEvent(input$axgb.run, {
   # m$set_nthread(parallel::detectCores() - 1)
   m$fit(
     time_budget = input$time.budget,
-    iterations = input$iter.budget
+    iterations = input$iter.budget,
+    plot = FALSE
   )
   hide("loading-training", anim = TRUE, animType = "fade")
   axgb.model$axgb = m
 })
 
 output$model.print = renderPrint({
-  if (!is.null(isolate(axgb())))
-    print(isolate(axgb()))
-  else
-    NULL
+  print(axgb())
 })
 
 measures.avail = reactive({
