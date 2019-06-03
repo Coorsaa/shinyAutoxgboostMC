@@ -53,7 +53,7 @@ observeEvent(input$axgb.run, {
 })
 
 output$model.print = renderPrint({
-  print(axgb())
+  print(isolate(axgb()))
 })
 
 measures.avail = reactive({
@@ -76,6 +76,28 @@ output$measures.sel = renderUI({
 measures.axgb = reactive({
   req(input$measures.sel)
   listMeasures(task(), create = TRUE)[input$measures.sel]
+})
+
+output$opt.path.plot = renderPlotly({
+  axgb = isolate(axgb())
+  p = axgb$plot_opt_path()
+  plot(p)
+})
+
+# output$opt.path = renderPlot({
+#   opt.path.plot()
+# })
+
+output$pareto.front.plot = renderPlotly({
+  axgb = isolate(axgb())
+  p = axgb$plot_pareto_front()
+  plot(p)
+})
+
+output$params.plot = renderUI({
+  axgb = isolate(axgb())
+  p = axgb$plot_parallel_coordinates()
+  plot(p)
 })
 
 # model.ov = reactive({

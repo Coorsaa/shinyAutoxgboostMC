@@ -12,7 +12,20 @@ tabpanel.train = fluidPage(theme = shinytheme("united"),
       )
     ),
     mainPanel(
-      fluidRow(hidden(verbatimTextOutput("model.print")))
+      tabBox(id = "train.tab", selected = "Model", width = 9,
+        tabPanel("Model",
+          fluidRow(hidden(verbatimTextOutput("model.print")))
+        ),
+        tabPanel("Optimization Path",
+          fluidRow(plotlyOutput("opt.path.plot"))
+        ),
+        tabPanel("Pareto Front",
+          fluidRow(plotlyOutput("pareto.front.plot"))
+        ),
+        tabPanel("Parameterset",
+          fluidRow(htmlOutput("params.plot"))
+        )
+      )
     )
   )
 )

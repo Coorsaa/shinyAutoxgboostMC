@@ -142,31 +142,31 @@ status = reactive({
 
   if (is.null(data$data)) {
     data = prettyCheckbox(inputId = "checkbox.data",  label = "Choose Data",
-      shape = "round", status = "danger", icon = icon("close"),
+      shape = "round", status = "danger", icon = icon("close"), animation = "smooth",
       fill = TRUE, value = TRUE)
   } else {
     data = prettyCheckbox(inputId = "checkbox.data",  label = "Choose Data",
-      shape = "round", status = "success", icon = icon("check"),
+      shape = "round", status = "success", icon = icon("check"), animation = "smooth",
       fill = TRUE, value = TRUE)
   }
 
   if (is.null(task.object$task)) {
     task = prettyCheckbox(inputId = "checkbox.task",  label = "Create Task",
-      shape = "round", status = "danger", icon = icon("close"),
+      shape = "round", status = "danger", icon = icon("close"), animation = "smooth",
       fill = TRUE, value = TRUE)
   } else {
     task = prettyCheckbox(inputId = "checkbox.task",  label = "Create Task",
-      shape = "round", status = "success", icon = icon("check"),
+      shape = "round", status = "success", icon = icon("check"), animation = "smooth",
       fill = TRUE, value = TRUE)
   }
 
   if (is.null(axgb.model$axgb)) {
     axgb = prettyCheckbox(inputId = "checkbox.model",  label = "Train Model",
-      shape = "round", status = "danger", icon = icon("close"),
+      shape = "round", status = "danger", icon = icon("close"), animation = "smooth",
       fill = TRUE, value = TRUE)
   } else {
     axgb = prettyCheckbox(inputId = "checkbox.model",  label = "Train Model",
-      shape = "round", status = "success", icon = icon("check"),
+      shape = "round", status = "success", icon = icon("check"), animation = "smooth",
       fill = TRUE, value = TRUE)
   }
 
